@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love & Friendship</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page1" class="page">
+        <h1 class="title">Hello Afrozz Ji!!</h1>
+        <button onclick="nextPage(2)" class="proceed">Press to Proceed</button>
+    </div>
+    
+    <div id="page2" class="page hidden">
+        <button class="choice pink" onclick="nextPage(3)">Do you prefer to take risk and explore the beauty of my coding? 🤩</button>
+        <button class="choice red" onclick="nextPage('exit')">Leave this nonsense and leave 😥</button>
+    </div>
+    
+    <div id="exitPage" class="page hidden">
+        <h2>Thank you for visiting...</h2>
+    </div>
+    
+    <div id="page3" class="page hidden">
+        <h2>Thank you Afroz, yaha tak ane ke liye apka bohot bada meharbani</h2>
+        <button onclick="nextPage(4)" class="orange">Aree koe na😂</button>
+    </div>
+    
+    <div id="page4" class="page hidden">
+        <h2>Disclaimer:<br> Are you ready to celebrate the first-ever online Rose Day😭 With none other than me?😭😭</h2>
+        <button class="red" onclick="nextPage(5)">yaa😒</button>
+        <button class="blue" onclick="nextPage(5)">yes🙄</button>
+        <button class="pink" onclick="nextPage(5)">yes😂</button>
+    </div>
+    
+    <div id="page5" class="page hidden">
+        <h2>Choose your favorite rose:</h2>
+        <button onclick="nextPage(6)">Red Rose</button>
+        <button onclick="nextPage(6)">Pink Rose</button>
+        <button onclick="nextPage(6)">Yellow Rose</button>
+        <button onclick="nextPage(6)">White Rose</button>
+        <button onclick="nextPage(6)">Purple Rose</button>
+        <button onclick="nextPage(6)">Red + White Rose</button>
+    </div>
+    
+    <div id="page6" class="page hidden">
+        <h2>Choose the most important place to you:</h2>
+        <button onclick="nextPage(7)">Holy Place</button>
+        <button onclick="nextPage(7)">School</button>
+        <button onclick="nextPage(7)">Your Own Hospital</button>
+        <button onclick="nextPage(7)">School Library</button>
+        <button onclick="nextPage(7)">Football Ground</button>
+    </div>
+    
+    <div id="page7" class="page hidden">
+        <h2>Thank you for your effort, this means a lot to a person like me, jise tune itna pareshan kiya but still, you never left me.</h2>
+        <button onclick="nextPage(8)">Next</button>
+    </div>
+    
+    <div id="page8" class="page hidden">
+        <h2>Final Surprise!</h2>
+        <img src="selected_place.jpg" alt="Your chosen place">
+        <img src="selected_rose.jpg" alt="Your chosen rose">
+        <img src="teddy.jpg" alt="Teddy">
+        <img src="chocolates.jpg" alt="Chocolates">
+        <h3>Thank You!</h3>
+    </div>
+    
+    <script>
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+            if (pageNumber === 'exit') {
+                document.getElementById('exitPage').classList.remove('hidden');
+            } else {
+                document.getElementById('page' + pageNumber).classList.remove('hidden');
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #222;
+            color: white;
+        }
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .page:first-child {
+            display: block;
+        }
+        .title {
+            font-size: 3em;
+            color: pink;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        .proceed {
+            background: purple;
+            color: white;
+        }
+        .choice.pink { background: pink; }
+        .choice.red { background: red; color: white; }
+        .orange { background: orange; }
+        .red { background: red; color: white; }
+        .blue { background: blue; color: white; }
+        .pink { background: pink; }
+    </style>
+</body>
+</html>
